@@ -6,8 +6,13 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\n\taddPlayerToTrack: async () => {\n\n\t\tif (appsmith.store.trackedPlayers === undefined){\n\t\t\tawait storeValue(\"trackedPlayers\", [])\n\t\t}\n\n\t\tvar toAdd = titledPlayers.triggeredRow.name\n\t\tif (toAdd !== undefined){\n\t\t\tvar playerset = new Set(appsmith.store.trackedPlayers);\n\t\t\tplayerset.add(toAdd)\n\t\t\tawait storeValue(\"trackedPlayers\", Array.from(playerset))\n\t\t}\n\t},\n}f",
-    "variables": [],
+    "body": "export default {\nTRACKED_PLAYERS : \"TRACKED_PLAYERS\",\n\n\taddPlayerToTrack: async () => {\n\n\t\tif (appsmith.store[trackedPlayerStore.TRACKED_PLAYERS] === undefined){\n\t\t\tawait storeValue(trackedPlayerStore.TRACKED_PLAYERS, [])\n\t\t}\n\n\t\tvar toAdd = titledPlayers.triggeredRow.name\n\t\tif (toAdd !== undefined){\n\t\t\tvar playerset = new Set(appsmith.store[trackedPlayerStore.TRACKED_PLAYERS]);\n\t\t\tplayerset.add(toAdd)\n\t\t\tawait storeValue(trackedPlayerStore.TRACKED_PLAYERS, Array.from(playerset))\n\t\t}\n\t},\n}",
+    "variables": [
+      {
+        "name": "TRACKED_PLAYERS",
+        "value": "\"TRACKED_PLAYERS\""
+      }
+    ],
     "userPermissions": []
   },
   "id": "search players_trackedPlayerStore",
