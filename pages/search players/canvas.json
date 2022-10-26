@@ -599,8 +599,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 6,
-              "bottomRow": 19,
+              "topRow": 2,
+              "bottomRow": 6,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -609,7 +609,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 14.03125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 36,
+              "leftColumn": 34,
               "dynamicBindingPathList": [
                 {
                   "key": "truncateButtonColor"
@@ -626,10 +626,10 @@
               ],
               "shouldTruncate": false,
               "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-              "text": "{{Array.from(appsmith.store.trackedPlayers).join(',')}}",
+              "text": "{{Array.from(appsmith.store[trackedPlayerStore.TRACKED_PLAYERS]).join(',')}}",
               "key": "96wjl8kfys",
               "isDeprecated": false,
-              "rightColumn": 52,
+              "rightColumn": 57,
               "textAlign": "LEFT",
               "widgetId": "puddchs0bk",
               "isVisible": true,
@@ -641,6 +641,68 @@
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "fontSize": "1rem"
+            },
+            {
+              "boxShadow": "none",
+              "widgetName": "Input1",
+              "displayName": "Input",
+              "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+              "searchTags": [
+                "form",
+                "text input",
+                "number",
+                "textarea"
+              ],
+              "topRow": 8,
+              "bottomRow": 12,
+              "parentRowSpace": 10,
+              "labelWidth": 5,
+              "autoFocus": false,
+              "type": "INPUT_WIDGET_V2",
+              "hideCard": false,
+              "animateLoading": true,
+              "parentColumnSpace": 14.03125,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onTextChanged"
+                }
+              ],
+              "resetOnSubmit": true,
+              "leftColumn": 34,
+              "dynamicBindingPathList": [
+                {
+                  "key": "accentColor"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "validation"
+                }
+              ],
+              "labelPosition": "Left",
+              "labelStyle": "",
+              "inputType": "TEXT",
+              "isDisabled": false,
+              "key": "6gv5p7w9n4",
+              "validation": "{{trackedPlayerStore.isPlayerValid()}}",
+              "labelTextSize": "0.875rem",
+              "isRequired": false,
+              "onTextChanged": "{{storeValue(trackedPlayerStore.SELECTED_PLAYER,Input1.text)}}",
+              "isDeprecated": false,
+              "rightColumn": 54,
+              "widgetId": "93qzss5z8u",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "isVisible": true,
+              "label": "Label",
+              "version": 2,
+              "parentId": "0",
+              "labelAlignment": "left",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "iconAlign": "left",
+              "defaultText": ""
             }
           ]
         },
