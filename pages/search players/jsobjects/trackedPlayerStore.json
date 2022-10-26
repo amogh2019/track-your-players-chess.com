@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "trackedPlayerStore",
+    "pageId": "search players",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\n\taddPlayerToTrack: async () => {\n\n\t\tif (appsmith.store.trackedPlayers === undefined){\n\t\t\tawait storeValue(\"trackedPlayers\", [])\n\t\t}\n\n\t\tvar toAdd = titledPlayers.triggeredRow.name\n\t\tif (toAdd !== undefined){\n\t\t\tvar playerset = new Set(appsmith.store.trackedPlayers);\n\t\t\tplayerset.add(toAdd)\n\t\t\tawait storeValue(\"trackedPlayers\", Array.from(playerset))\n\t\t}\n\t},\n}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "search players_trackedPlayerStore",
+  "deleted": false,
+  "gitSyncId": "635935170e05b60ea4e807f7_63595cd90ebeca6fa7984d06"
+}

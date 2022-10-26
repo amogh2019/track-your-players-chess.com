@@ -14,6 +14,9 @@
   "unreadCommentThreads": 0,
   "color": "#FFDEDE",
   "icon": "medical",
+  "unpublishedAppLayout": {
+    "type": "TABLET_LARGE"
+  },
   "evaluationVersion": 2,
   "applicationVersion": 2,
   "isManualUpdate": false,

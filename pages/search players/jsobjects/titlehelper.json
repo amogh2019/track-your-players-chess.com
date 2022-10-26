@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "titlehelper",
+    "pageId": "search players",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\n\tgetSelectedTitle:  () => {\n\t\tif (appsmith.store.selectedTitle === undefined){\n\t\t\treturn \"GM\"\n\t\t} \n\t\treturn appsmith.store.selectedTitle\n\t},\n\n\tgetTableDataAfterTransformation: async () => {\n\t\tif (appsmith.store.selectedTitle === undefined){\n\t\t\treturn []\n\t\t}\n\t\tvar temp = await chess_com_titled_players.run()\n\t\tvar res = temp.players;\n\n\t\tvar tabledata = []\n\t\tfor(let i=0;i < res.length;i++){\n\t\t\tvar data = {}\n\t\t\tdata[\"name\"] = res[i]\n\t\t\tdata[\"action\"] = \"\"\n\t\t\ttabledata.push(data);\n\t\t}\n\n\t\treturn tabledata\n\t},\n\n\tselectGM : async () => {\n\t\tif ( appsmith.store.selectedTitle === undefined ) {\n\t\t\tawait storeValue(\"selectedTitle\", \"GM\")\n\t\t} else {\n\t\t\tawait storeValue(\"selectedTitle\", undefined)\n\t\t}\n\t\treturn await titlehelper.refreshTitleData();\n\t},\n\n\trefreshTitleData : async () => {\n\t\tvar temp =  await titlehelper.getTableDataAfterTransformation()\n\t\tawait storeValue(\"titlePlayerData\", temp)\n\t\treturn temp\n\t},\n\t\tselectWIM : async () => {\n\t\tif ( appsmith.store.selectedTitle === undefined ) {\n\t\t\tawait storeValue(\"selectedTitle\", \"WIM\")\n\t\t} else {\n\t\t\tawait storeValue(\"selectedTitle\", undefined)\n\t\t}\n\t\treturn await titlehelper.refreshTitleData();\n\t},\n\t\tselectWGM : async () => {\n\t\tif ( appsmith.store.selectedTitle === undefined ) {\n\t\t\tawait storeValue(\"selectedTitle\", \"WGM\")\n\t\t} else {\n\t\t\tawait storeValue(\"selectedTitle\", undefined)\n\t\t}\n\t\treturn await titlehelper.refreshTitleData();\n\t},\n\t\tselectIM : async () => {\n\t\tif ( appsmith.store.selectedTitle === undefined ) {\n\t\t\tawait storeValue(\"selectedTitle\", \"IM\")\n\t\t} else {\n\t\t\tawait storeValue(\"selectedTitle\", undefined)\n\t\t}\n\t\treturn await titlehelper.refreshTitleData();\n\t},\n}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "search players_titlehelper",
+  "deleted": false,
+  "gitSyncId": "635935170e05b60ea4e807f7_635936c7455458389c212f82"
+}
