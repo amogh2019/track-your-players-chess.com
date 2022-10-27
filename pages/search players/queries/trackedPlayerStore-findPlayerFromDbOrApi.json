@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  var ps_d = appsmith.store[trackedPlayerStore.PLAYERS_DATA];\n  var curr_p = appsmith.store[trackedPlayerStore.CURRENT_PLAYER];\n  if (ps_d === undefined) {\n    ps_d = {};\n    var res1 = await chess_com_titled_players.run();\n    ps_d[curr_p] = res1;\n    await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n  } else {\n    if ((curr_p in ps_d)) {\n      return ps_d.curr_p;\n    } else {\n      var res = await chess_com_titled_players.run();\n      ps_d[curr_p] = res;\n      await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n    }\n  }\n  return appsmith.store[trackedPlayerStore.PLAYERS_DATA].curr_p;\n}",
+      "body": "async () => {\n  var ps_d = appsmith.store[trackedPlayerStore.PLAYERS_DATA];\n  var curr_p = appsmith.store[trackedPlayerStore.CURRENT_PLAYER];\n  if (ps_d === undefined) {\n    ps_d = {};\n    var res1 = await chess_com_player.run();\n    ps_d[curr_p] = res1;\n    await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n  } else {\n    if ((curr_p in ps_d)) {\n      return ps_d.curr_p;\n    } else {\n      var res = await chess_com_player.run();\n      ps_d[curr_p] = res;\n      await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n    }\n  }\n  return appsmith.store[trackedPlayerStore.PLAYERS_DATA].curr_p;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  var ps_d = appsmith.store[trackedPlayerStore.PLAYERS_DATA];\n  var curr_p = appsmith.store[trackedPlayerStore.CURRENT_PLAYER];\n  if (ps_d === undefined) {\n    ps_d = {};\n    var res1 = await chess_com_titled_players.run();\n    ps_d[curr_p] = res1;\n    await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n  } else {\n    if ((curr_p in ps_d)) {\n      return ps_d.curr_p;\n    } else {\n      var res = await chess_com_titled_players.run();\n      ps_d[curr_p] = res;\n      await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n    }\n  }\n  return appsmith.store[trackedPlayerStore.PLAYERS_DATA].curr_p;\n}"
+      "async () => {\n  var ps_d = appsmith.store[trackedPlayerStore.PLAYERS_DATA];\n  var curr_p = appsmith.store[trackedPlayerStore.CURRENT_PLAYER];\n  if (ps_d === undefined) {\n    ps_d = {};\n    var res1 = await chess_com_player.run();\n    ps_d[curr_p] = res1;\n    await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n  } else {\n    if ((curr_p in ps_d)) {\n      return ps_d.curr_p;\n    } else {\n      var res = await chess_com_player.run();\n      ps_d[curr_p] = res;\n      await storeValue(trackedPlayerStore.PLAYERS_DATA, ps_d);\n    }\n  }\n  return appsmith.store[trackedPlayerStore.PLAYERS_DATA].curr_p;\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

@@ -667,7 +667,7 @@
                   "key": "onTextChanged"
                 }
               ],
-              "resetOnSubmit": true,
+              "resetOnSubmit": false,
               "leftColumn": 34,
               "dynamicBindingPathList": [
                 {
@@ -737,7 +737,7 @@
               ],
               "shouldTruncate": false,
               "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-              "text": "{{appsmith.store[trackedPlayerStore.PLAYERS_DATA].rpragchess}}",
+              "text": "{{JSON.stringify(appsmith.store[trackedPlayerStore.PLAYERS_DATA].rpragchess)}}",
               "key": "1ii5hl28oj",
               "isDeprecated": false,
               "rightColumn": 55,

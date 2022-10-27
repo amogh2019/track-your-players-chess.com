@@ -20,7 +20,7 @@
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "/pub/player/{{appsmith.store[trackedPlayerStore.SELECTED_PLAYER]}}",
+      "path": "/pub/player/{{appsmith.store[trackedPlayerStore.CURRENT_PLAYER]}}",
       "headers": [],
       "encodeParamsToggle": true,
       "queryParameters": [],
@@ -46,7 +46,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "appsmith.store[trackedPlayerStore.SELECTED_PLAYER]"
+      "appsmith.store[trackedPlayerStore.CURRENT_PLAYER]"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
