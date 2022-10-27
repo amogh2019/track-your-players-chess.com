@@ -648,6 +648,7 @@
               "dynamicPropertyPathList": [],
               "displayName": "Input",
               "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+              "onSubmit": "{{trackedPlayerStore.addPlayerToTrackFromInput()}}",
               "searchTags": [
                 "form",
                 "text input",
@@ -666,6 +667,9 @@
               "dynamicTriggerPathList": [
                 {
                   "key": "onTextChanged"
+                },
+                {
+                  "key": "onSubmit"
                 }
               ],
               "resetOnSubmit": true,
@@ -684,6 +688,7 @@
               "labelPosition": "Left",
               "labelStyle": "",
               "inputType": "TEXT",
+              "placeholderText": "rpragchess",
               "isDisabled": false,
               "key": "6gv5p7w9n4",
               "validation": "{{appsmith.store[trackedPlayerStore.IS_CURRENT_PLAYER_VALID]}}",
@@ -704,7 +709,7 @@
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "iconAlign": "left",
-              "defaultText": "rpragchess"
+              "defaultText": ""
             },
             {
               "widgetName": "Text4",
@@ -790,7 +795,7 @@
                   "key": "isDisabled"
                 }
               ],
-              "isDisabled": "{{!Input1.isValid}}",
+              "isDisabled": "{{!Input1.isValid || Input1.text.length === 0}}",
               "key": "n6lnex21qk",
               "isDeprecated": false,
               "rightColumn": 56,
