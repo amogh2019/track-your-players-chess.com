@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 670,
+          "bottomRow": 1000,
           "containerStyle": "none",
           "snapRows": 125,
           "parentRowSpace": 1,
@@ -599,8 +599,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 2,
-              "bottomRow": 6,
+              "topRow": 76,
+              "bottomRow": 80,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -609,7 +609,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 14.03125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 34,
+              "leftColumn": 36,
               "dynamicBindingPathList": [
                 {
                   "key": "truncateButtonColor"
@@ -629,7 +629,7 @@
               "text": "{{Array.from(appsmith.store[trackedPlayerStore.TRACKED_PLAYERS]).join(',')}}",
               "key": "96wjl8kfys",
               "isDeprecated": false,
-              "rightColumn": 57,
+              "rightColumn": 59,
               "textAlign": "LEFT",
               "widgetId": "puddchs0bk",
               "isVisible": true,
@@ -657,6 +657,7 @@
               ],
               "topRow": 9,
               "bottomRow": 13,
+              "tooltip": "Enter a valid chess.com username",
               "parentRowSpace": 10,
               "labelWidth": "10",
               "autoFocus": false,
@@ -686,7 +687,7 @@
                 }
               ],
               "labelPosition": "Left",
-              "labelStyle": "",
+              "labelStyle": "ITALIC,BOLD",
               "inputType": "TEXT",
               "placeholderText": "rpragchess",
               "isDisabled": false,
@@ -701,7 +702,7 @@
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "errorMessage": "username does not exist on chess.com",
               "isVisible": true,
-              "label": "chess.com username",
+              "label": "",
               "version": 2,
               "parentId": "0",
               "labelAlignment": "left",
@@ -720,8 +721,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 13,
-              "bottomRow": 22,
+              "topRow": 83,
+              "bottomRow": 92,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -730,7 +731,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 14.03125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 33,
+              "leftColumn": 38,
               "dynamicBindingPathList": [
                 {
                   "key": "truncateButtonColor"
@@ -750,7 +751,7 @@
               "text": "{{JSON.stringify(appsmith.store[trackedPlayerStore.PLAYERS_DATA][Input1.text])}}",
               "key": "1ii5hl28oj",
               "isDeprecated": false,
-              "rightColumn": 55,
+              "rightColumn": 60,
               "textAlign": "LEFT",
               "widgetId": "hwfbdvzxvq",
               "isVisible": true,
@@ -766,6 +767,7 @@
             {
               "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
               "widgetName": "submit_username",
+              "onClick": "{{trackedPlayerStore.addPlayerToTrackFromInput()}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "dynamicPropertyPathList": [
                 {
@@ -785,7 +787,11 @@
               "hideCard": false,
               "animateLoading": true,
               "parentColumnSpace": 14.03125,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
               "leftColumn": 54,
               "dynamicBindingPathList": [
                 {
