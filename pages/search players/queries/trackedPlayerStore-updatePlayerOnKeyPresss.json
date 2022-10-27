@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER, playerToTrack.text);\n  await trackedPlayerStore.isValidPlayer();\n}",
+      "body": "async () => {\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER, playerToTrack.text);\n  return await trackedPlayerStore.isValidPlayer();\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER, playerToTrack.text);\n  await trackedPlayerStore.isValidPlayer();\n}"
+      "async () => {\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER, playerToTrack.text);\n  return await trackedPlayerStore.isValidPlayer();\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

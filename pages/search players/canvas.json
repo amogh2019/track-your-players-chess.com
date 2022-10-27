@@ -692,10 +692,10 @@
               "placeholderText": "rpragchess",
               "isDisabled": false,
               "key": "6gv5p7w9n4",
-              "validation": "{{appsmith.store[trackedPlayerStore.IS_CURRENT_PLAYER_VALID]}}",
+              "validation": "{{appsmith.store[trackedPlayerStore.IS_CURRENT_PLAYER_VALID] === undefined || appsmith.store[trackedPlayerStore.IS_CURRENT_PLAYER_VALID]}}",
               "labelTextSize": "0.875rem",
               "isRequired": false,
-              "onTextChanged": "{{trackedPlayerStore.updatePlayerOnKeyPresss()}}",
+              "onTextChanged": "",
               "isDeprecated": false,
               "rightColumn": 53,
               "widgetId": "93qzss5z8u",
@@ -796,12 +796,9 @@
               "dynamicBindingPathList": [
                 {
                   "key": "buttonColor"
-                },
-                {
-                  "key": "isDisabled"
                 }
               ],
-              "isDisabled": "{{!playerToTrack.isValid || playerToTrack.text.length === 0}}",
+              "isDisabled": "",
               "key": "n6lnex21qk",
               "isDeprecated": false,
               "rightColumn": 56,
