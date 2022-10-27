@@ -1,0 +1,33 @@
+{
+  "unpublishedCollection": {
+    "name": "trackedPlayerStore",
+    "pageId": "track players",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tTRACKED_PLAYERS : \"TRACKED_PLAYERS\",\n\tPLAYERS_DATA : \"PLAYERS_DATA\",\n\tCURRENT_PLAYER : \"CURRENT_PLAYER\",\n\tIS_CURRENT_PLAYER_VALID : \"IS_CURRENT_PLAYER_VALID\",\n\n\tgetTableTransformedData : () => {\n\t\t\n\t\tvar res = appsmith.store[trackedPlayerStore.TRACKED_PLAYERS]\n\t\t\tvar tabledata = []\n\t\tfor(let i=0;i < res.length;i++){\n\t\t\tvar data = {}\n\t\t\tdata[\"name\"] = res[i]\n\t\t\tdata[\"action\"] = \"\"\n\t\t\ttabledata.push(data);\n\t\t}\n\n\t\treturn tabledata\n\t},\n\n\tremovePlayerToTrack: async () => {\n\n\t\tif (appsmith.store[trackedPlayerStore.TRACKED_PLAYERS] === undefined){\n\t\t\tawait storeValue(trackedPlayerStore.TRACKED_PLAYERS, [])\n\t\t}\n\n\t\tvar toRemove = trackedPlayerTable.triggeredRow.name\n\t\tif (toRemove !== undefined){\n\t\t\tvar playerset = new Set(appsmith.store[trackedPlayerStore.TRACKED_PLAYERS]);\n\t\t\tplayerset.delete(toRemove)\n\t\t\tawait storeValue(trackedPlayerStore.TRACKED_PLAYERS, Array.from(playerset))\n\t\t}\n\t},\n\n\t\n}",
+    "variables": [
+      {
+        "name": "TRACKED_PLAYERS",
+        "value": "\"TRACKED_PLAYERS\""
+      },
+      {
+        "name": "PLAYERS_DATA",
+        "value": "\"PLAYERS_DATA\""
+      },
+      {
+        "name": "CURRENT_PLAYER",
+        "value": "\"CURRENT_PLAYER\""
+      },
+      {
+        "name": "IS_CURRENT_PLAYER_VALID",
+        "value": "\"IS_CURRENT_PLAYER_VALID\""
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "track players_trackedPlayerStore",
+  "deleted": false,
+  "gitSyncId": "635935170e05b60ea4e807f7_635ab0d711fe930ca2db099c"
+}
