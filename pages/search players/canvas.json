@@ -681,9 +681,6 @@
                 },
                 {
                   "key": "borderRadius"
-                },
-                {
-                  "key": "validation"
                 }
               ],
               "labelPosition": "Left",
@@ -692,7 +689,7 @@
               "placeholderText": "rpragchess",
               "isDisabled": false,
               "key": "6gv5p7w9n4",
-              "validation": "{{appsmith.store[trackedPlayerStore.IS_CURRENT_PLAYER_VALID] === false}}",
+              "validation": "true",
               "labelTextSize": "0.875rem",
               "isRequired": false,
               "onTextChanged": "",
