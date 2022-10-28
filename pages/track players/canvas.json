@@ -1640,13 +1640,13 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "track players_trackedPlayerStore.initTasks",
-              "name": "trackedPlayerStore.initTasks",
+              "id": "track players_trackedPlayerStore.getPlayerGamesData",
+              "name": "trackedPlayerStore.getPlayerGamesData",
               "collectionId": "track players_trackedPlayerStore",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, []);\n}"
+                "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, true);\n  var playername = trackedPlayerStore.getPlayerToView();\n  if (playername !== undefined) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER, playername);\n  }\n  var res = await chess_com_player_month_games.run();\n  if (res === undefined || res.length === 0 || res.games.length === 0) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, undefined);\n    await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n    return undefined;\n  }\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, res.games.reverse());\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  return res.games.reverse();\n}"
               ],
               "timeoutInMillisecond": 10000
             }
