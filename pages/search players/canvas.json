@@ -121,7 +121,7 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "text": "current valid player info : {{JSON.stringify(appsmith.store[trackedPlayerStore.PLAYERS_DATA][playerToTrack.text])}}",
+                      "text": "current valid player info : {{JSON.stringify(appsmith.store[trackedPlayerStore.PLAYERS_DATA][playerToTrack.text])}}\n{{JSON.stringify(appsmith.store[trackedPlayerStore.PLAYERS_DATA][titledPlayers.triggeredRow.name])}}",
                       "key": "1ii5hl28oj",
                       "isDeprecated": false,
                       "rightColumn": 29,
