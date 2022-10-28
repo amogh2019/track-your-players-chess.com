@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, true);\n  var playername = trackedPlayerStore.getPlayerToView();\n  if (playername !== undefined) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER, playername);\n  }\n  var res = await chess_com_player_month_games.run();\n  if (res === undefined || res.length === 0 || res.games.length === 0) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, undefined);\n    await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n    return undefined;\n  }\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, res.games);\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  return res.games;\n}",
+      "body": "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, true);\n  var playername = trackedPlayerStore.getPlayerToView();\n  if (playername !== undefined) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER, playername);\n  }\n  var res = await chess_com_player_month_games.run();\n  if (res === undefined || res.length === 0 || res.games.length === 0) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, undefined);\n    await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n    return undefined;\n  }\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, res.games);\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  return res.games.reverse();\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, true);\n  var playername = trackedPlayerStore.getPlayerToView();\n  if (playername !== undefined) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER, playername);\n  }\n  var res = await chess_com_player_month_games.run();\n  if (res === undefined || res.length === 0 || res.games.length === 0) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, undefined);\n    await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n    return undefined;\n  }\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, res.games);\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  return res.games;\n}"
+      "async () => {\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, true);\n  var playername = trackedPlayerStore.getPlayerToView();\n  if (playername !== undefined) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER, playername);\n  }\n  var res = await chess_com_player_month_games.run();\n  if (res === undefined || res.length === 0 || res.games.length === 0) {\n    await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, undefined);\n    await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n    return undefined;\n  }\n  await storeValue(trackedPlayerStore.CURRENT_PLAYER_NOW_MONTH_GAMES, res.games);\n  await storeValue(trackedPlayerStore.PLAYER_GAMES_LOADING, false);\n  return res.games.reverse();\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
